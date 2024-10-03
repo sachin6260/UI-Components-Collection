@@ -1,0 +1,95 @@
+ /* Navbar.css */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  padding: 20px;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 60px; /* Set initial height */
+}
+
+.navbar.open {
+  max-height: 300px; /* Set height to accommodate menu items */
+}
+
+.navbar-logo {
+  float: left;
+  color: #fff;
+  font-size: 24px;
+}
+
+.navbar-list {
+  float: right;
+  margin-top: 10px;
+  list-style-type: none;
+}
+
+.navbar-item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.navbar-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar-toggle {
+  display: none; /* Hide toggle button by default */
+}
+
+.navbar-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin-bottom: 5px;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggle.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar-toggle.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  .navbar-logo,
+  .navbar-list {
+    float: none;
+    text-align: center;
+  }
+
+  .navbar-item {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .navbar-toggle {
+    display: block; /* Show toggle button for smaller screens */
+    float: right;
+    cursor: pointer;
+  }
+
+  .navbar-list {
+    display: none; /* Hide menu items by default for smaller screens */
+  }
+
+  .navbar-list.open {
+    display: block; /* Show menu items when navbar is open */
+  }
+}
